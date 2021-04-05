@@ -52,8 +52,8 @@ final class BaseGlucoseManager: GlucoseManager, Injectable {
     }
 
     private func fetchGlucoseFromSgaredGroup() -> AnyPublisher<[BloodGlucose], Never> {
-        guard let suiteName = Bundle.main.appGroupSuiteName,
-              let sharedDefaults = UserDefaults(suiteName: suiteName)
+        let suiteName = "group.com.777258T3K8.loopkit.LoopGroup"
+        guard let sharedDefaults = UserDefaults(suiteName: suiteName)
         else {
             return Just([]).eraseToAnyPublisher()
         }
@@ -107,11 +107,5 @@ final class BaseGlucoseManager: GlucoseManager, Injectable {
         let matchRange = match.range(at: 1)
         let epoch = Double((timestamp as NSString).substring(with: matchRange))! / 1000
         return Date(timeIntervalSince1970: epoch)
-    }
-}
-
-public extension Bundle {
-    var appGroupSuiteName: String? {
-        object(forInfoDictionaryKey: "AppGroupID") as? String
     }
 }
