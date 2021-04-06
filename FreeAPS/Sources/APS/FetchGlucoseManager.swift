@@ -50,6 +50,7 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
             .store(in: &lifetime)
         timer.resume()
     }
+
     private func fetchGlucoseFromSharedGroup() -> AnyPublisher<[BloodGlucose], Never> {
         let suiteName = "group.com.777258T3K8.loopkit.LoopGroup"
         guard let sharedDefaults = UserDefaults(suiteName: suiteName)
