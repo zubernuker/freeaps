@@ -241,7 +241,6 @@ extension Home {
             } else {
                 statusTitle = "Suggested"
             }
-
         }
 
         private func setupReservoir() {

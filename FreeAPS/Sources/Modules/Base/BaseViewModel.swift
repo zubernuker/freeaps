@@ -37,9 +37,9 @@ class BaseViewModel<Provider>: ViewModel, Injectable where Provider: FreeAPS.Pro
             return view
         }
 
-        let view = view(for: screen)
-        viewCache[screen] = view
-        return view
+        let viewZ = view(for: screen)
+        viewCache[screen] = viewZ
+        return viewZ
     }
 
     func cleanViewCache() {
