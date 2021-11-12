@@ -3,7 +3,7 @@ import Foundation
 
 struct AppGroupSource: GlucoseSource {
     func fetch() -> AnyPublisher<[BloodGlucose], Never> {
-        guard let suiteName = Bundle.main.appGroupSuiteName,
+        guard let suiteName = "group.com.777258T3K8.loopkit.LoopGroup",
               let sharedDefaults = UserDefaults(suiteName: suiteName)
         else {
             return Just([]).eraseToAnyPublisher()
